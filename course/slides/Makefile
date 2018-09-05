@@ -1,6 +1,6 @@
 PUBLISH_TO=~/sites/julienrf.github.com/scala-lessons/course
-IMAGES=$(wildcard *.png)
-SOURCES=intro.md references.md core.md sbt.md adt.md std.md sugar.md hof.md modules.md imperative.md polymorphism.md
+IMAGES=$(wildcard images/*.png)
+SOURCES=$(wildcard content/en/*.md)
 
 all: $(SOURCES) Makefile
 	yarn install
