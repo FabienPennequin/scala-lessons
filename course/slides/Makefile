@@ -3,7 +3,8 @@ IMAGES=$(wildcard *.png)
 SOURCES=intro.md references.md core.md sbt.md adt.md std.md sugar.md hof.md modules.md imperative.md polymorphism.md
 
 all: $(SOURCES) Makefile
-	pandoc -t slidy -s -o index.html --standalone --smart --slide-level=2 --number-sections $(SOURCES)
+	yarn install
+	pandoc -t revealjs -s -o index.html --standalone --slide-level=2 -V revealjs-url=./node_modules/reveal.js/ -V theme:black --number-sections $(SOURCES)
 
 images: $(IMAGES)
 	cp $(IMAGES) $(PUBLISH_TO)
